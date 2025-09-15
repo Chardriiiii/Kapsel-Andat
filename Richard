@@ -1,0 +1,36 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Set parameters
+n = 100  # number of data points
+variance_1 = 2  # variance for first white noise
+variance_2 = 4  # variance for second white noise
+
+# Generate white noise with two different variances
+white_noise_1 = np.random.normal(0, np.sqrt(variance_1), n)
+white_noise_2 = np.random.normal(0, np.sqrt(variance_2), n)
+
+# Create the plot
+plt.figure(figsize=(12, 6))
+
+# Plot first white noise with variance 2
+plt.subplot(2, 1, 1)
+plt.plot(white_noise_1, label="White Noise with Variance 2", color='blue')
+plt.title('White Noise with Variance 2')
+plt.xlabel('Time')
+plt.ylabel('Value')
+plt.grid(True)
+plt.legend()
+
+# Plot second white noise with variance 4
+plt.subplot(2, 1, 2)
+plt.plot(white_noise_2, label="White Noise with Variance 4", color='red')
+plt.title('White Noise with Variance 4')
+plt.xlabel('Time')
+plt.ylabel('Value')
+plt.grid(True)
+plt.legend()
+
+# Show the plot
+plt.tight_layout()
+plt.show()
